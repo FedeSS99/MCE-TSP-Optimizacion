@@ -1,2 +1,2 @@
-# Poderoso-Proyecto-de-Optimizaci-n
+# Poderoso-Proyecto-de-Optimizacion
 Poderosísimo proyecto de optimización
