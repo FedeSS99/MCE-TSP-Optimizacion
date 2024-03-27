@@ -28,3 +28,26 @@ La aplicación del Problema del Viajante (TSP) al General Transit Feed Specifica
 - Desarrollar un algoritmo TSP que integre los datos GTFS de la Ciudad de México.
 - Identificar las 10 rutas de transporte público con mayor demanda en Ciudad de México, en traslados de lunes a viernes.
 - Verificar que las 10 rutas revisadas sean el camino óptimo, caso contrario, recomendar la búsqueda de otra ruta.
+
+
+
+# Datos
+
+**GTFS estático (General Transit Feed Specification): Especificación General de los Aspectos de Tránsito.**
+
+[Link a los datos](https://datos.cdmx.gob.mx/dataset/gtfs)
+
+**Notas sobre los datos**
+
+- El GTFS estático es un estándar para dar a conocer la operación del transporte público y la información geográfica asociada.
+- Aquí se publica la última versión del GTFS estático de la Ciudad de México (31 de octubre de 2022), el cual se mantiene en continua mejora y expansión a otros modos de transporte público.
+- Actualmente, se compone de ocho archivos de texto relacionados entre sí por un identificador que modelan cada aspecto de los servicios de transporte público: agencias, rutas, viajes, frecuencias, horarios, entre otros.
+- Los ocho archivos son los siguientes
+    - `agency.txt`: contiene el nombre de cada una de las agencias, así como páginas de internet donde se puede consultar más información sobre estas.
+    - `routes.txt`: incluye el origen y destino de cada una de las líneas, corredores o rutas que integran el Sistema, así como la agencia a la cual pertenecen y el nombre corto de la ruta correspondiente.
+    - `trips.txt`: contiene las distintas ramificaciones o variaciones que puede tener una ruta, se indica el sentido de la ruta de transporte y los días de servicio.
+    - `calendar.txt`: especifica los días de la semana en que operan los distintos servicios de transporte.
+    - `frequencies.txt`: contiene las frecuencias promedio de arribo entre las estaciones de cada viaje que se indican en el archivo trips.txt, así como los horarios de operación.
+    - `shapes.txt`: incluye los puntos que conforman el trazado de las rutas de transporte.
+    - `stops.txt`: indica la ubicación geográfica de las estaciones, así como el nombre con el que son comúnmente conocidas.
+    - `stop_times.txt`: cuenta con la información del tiempo estimado de arribo entre las estaciones o paradas que conforman cada viaje.
