@@ -51,3 +51,5 @@ La aplicación del Problema del Viajante (TSP) al General Transit Feed Specifica
     - `shapes.txt`: incluye los puntos que conforman el trazado de las rutas de transporte.
     - `stops.txt`: indica la ubicación geográfica de las estaciones, así como el nombre con el que son comúnmente conocidas.
     - `stop_times.txt`: cuenta con la información del tiempo estimado de arribo entre las estaciones o paradas que conforman cada viaje.
+ 
+ 
