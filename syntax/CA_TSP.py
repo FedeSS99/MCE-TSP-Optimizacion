@@ -1,66 +1,125 @@
 import numpy as np
 import pandas as pd
+
+from mpl_toolkits.basemap import Basemap
 import matplotlib.pyplot as plt
+from matplotlib import rcParams
+
+rcParams["font.family"] = "serif"
 
 class CA_TSP:
-    def __init__(self, Long:np.ndarray, Lat:np.ndarray, Etiquetas:list[str],
+    """
+    Initialize the TSP solver.
+    Args:
+    - Long: numpy array of longitudes for each node.
+    - Lat: numpy array of latitudes for each node.
+    - Names: list of names corresponding to each node.
+    - Ini: initial node for the TSP solution.
+    - MaxIters: maximum number of iterations for the solution search.
+    """
+    def __init__(self, Long:np.ndarray, Lat:np.ndarray, Names:list[str],
                  Ini:str, MaxIters:int) -> None:
-        self.__PosX, self.__PosY = Long, Lat
-        self.__Etiquetas : list[str] = Etiquetas
-        self.__N : int = len(self.__Etiquetas)
+        self.__Lat, self.__Long = Lat, Long
+        self.__Names : list[str] = Names
+        self.__N : int = len(self.__Names)
 
-        self.Nodos = {}
+        self.Nodes = {}
         for p in range(self.__N):
-            self.Nodos[self.__Etiquetas[p]] = (self.__PosX[p], self.__PosY[p])
+            self.Nodes[self.__Names[p]] = (self.__Long[p], self.__Lat[p])
 
         self.__Ini : str = Ini
+        self.__init_index = self.__Names.index(self.__Ini)
+        self.__availableIndex = np.delete(np.arange(self.__N), self.__init_index)
         self.__MaxIters : int = MaxIters
 
-        self.MatDist = self.__ObtenerMatrizDistancias()
+        self.MatDist = self.__ObtainDistanceMatrix()
 
-    def __ObtenerMatrizDistancias(self):
-        PosX = np.copy(self.__PosX).reshape((1,self.__N))
-        PosY = np.copy(self.__PosY).reshape((1,self.__N))
-        return np.sqrt((PosX - PosX.T)**2.0 + (PosY - PosY.T)**2.0)
+        print(f"-- Random Constructive Method --\nN = {self.__N}\nInitial Node: {self.__Ini}")
 
-    def __HallarRuta(self):
-        TotalSelecciones = self.__N - 1
-        ruta = [self.__Ini] + TotalSelecciones*["*"] + [self.__Ini]
+    def __ObtainDistanceMatrix(self):
+        """
+        Calculate the distance matrix based on node coordinates.
+
+        Returns:
+        - MatDist: numpy array representing the distance matrix.
+        """
+        Lat = np.deg2rad(np.copy(self.__Long).reshape((1,self.__N)))
+        Long = np.deg2rad(np.copy(self.__Lat).reshape((1,self.__N)))
+
+        cos_difLat = np.cos(Lat - Lat.T)
+        cos_difLong = np.cos(Long - Long.T)
+        prodcosLat = np.cos(Lat)*(np.cos(Lat).T)
+        arg_arcsin = np.sqrt(0.5 * (1 - cos_difLat + prodcosLat* ( 1.0 - cos_difLong)))
+
+        return 2.0 * 6371 * np.arcsin(arg_arcsin)
+
+    def __FindRandomRoute(self):
+        """
+        Find a random route for the TSP.
+
+        Returns:
+        - ruta: list representing the random route.
+        - dist_rec: total distance of the random route.
+        """
+
+        TotalNewSelections = self.__N - 1
+        ruta = [self.__Ini] + TotalNewSelections*["*"] + [self.__Ini]
         dist_rec = 0.0
 
-        indice_ini = self.__Etiquetas.index(self.__Ini)
+        random_indexes = np.random.choice(self.__availableIndex, TotalNewSelections, replace=False)
 
-        indices_disponibles = np.delete(np.arange(self.__N), indice_ini)
-        indices_aleatorios = np.random.choice(indices_disponibles, TotalSelecciones, replace=False)
+        prev_index = self.__init_index
+        for k in range(1, TotalNewSelections+1):
+            k_index = random_indexes[k-1]
 
-        indice_prev = indice_ini
-        for k in range(1, TotalSelecciones+1):
-            indice_k = indices_aleatorios[k-1]
-
-            ruta[k] = self.__Etiquetas[indice_k]
-            dist_rec += self.MatDist[indice_prev, indice_k]
-            indice_prev = indice_k
+            ruta[k] = self.__Names[k_index]
+            dist_rec += self.MatDist[prev_index, k_index]
+            prev_index = k_index
         
-        dist_rec += self.MatDist[indice_k, indice_ini]
+        dist_rec += self.MatDist[k_index, self.__init_index]
         
         return ruta, dist_rec
 
 
-    def EncontrarSolucion(self):
+    def FindSolution(self):
+        """
+        Find the best TSP solution using random constructive method.
+        """
+        print("\nSearching solutions...")
+
         n_iters = 0
         min_dist = np.inf
         mejor_ruta = []
         while n_iters < self.__MaxIters:
-            ruta_actual, dist = self.__HallarRuta()
+            ruta_actual, dist = self.__FindRandomRoute()
             n_iters += 1
-            print(f"#{n_iters} - {dist:.3f}", end = "\n")
 
             if dist < min_dist:
                 mejor_ruta = [nodo for nodo in ruta_actual]
                 min_dist = dist
-            
-        return mejor_ruta, min_dist
 
+                print(f"#{n_iters} - {min_dist}", end="\n")
+
+        self.best_route = mejor_ruta
+        self.best_route_dist = min_dist
+
+    def ShowCurrentSolution(self):
+        FigureMap = Basemap(projection="merc", llcrnrlat=15, urcrnrlat=35,
+                            llcrnrlon=-120, urcrnrlon=-85, resolution="i")
+        
+        FigureMap.drawcoastlines()
+        FigureMap.drawstates()
+        FigureMap.drawcountries()
+        FigureMap.drawparallels(np.arange(10, 40, 10), labels=[1,0,0,0], fontsize = 10)
+        FigureMap.drawmeridians(np.arange(-70, -120, -10), labels=[0,0,0,1], fontsize = 10)
+
+        X_ruta, Y_ruta = zip(*[self.Nodes[nodo] for nodo in self.best_route])
+        FigureMap.plot(X_ruta, Y_ruta, "-r", linewidth = 2.0, latlon = True, zorder = 0)
+        FigureMap.scatter(X_ruta, Y_ruta, marker = "^", color = "blue", latlon = True, zorder = 1)
+
+        plt.title(f"TSP-Constructivo   N={self.__N} Dist={self.best_route_dist:.2f}")
+        
+        plt.show()
 
 if __name__ == "__main__":
     data = pd.read_csv("./data/worldcitiespop.csv",
@@ -68,14 +127,15 @@ if __name__ == "__main__":
                                 "Latitude", "Longitude"])
     data = data.loc[data["Country"] == "mx", ["City", "Population", "Latitude", "Longitude"]]
     
-    q95_pop = data["Population"].quantile(0.95)
-    data = data[data["Population"] >= q95_pop]
+    q_pop = data["Population"].quantile(0.995)
+    data = data[data["Population"] >= q_pop]
 
     Longitude = data["Longitude"].to_numpy()
     Latitude = data["Latitude"].to_numpy()
     Ciudades = data["City"].to_list()
 
-    TSP_Capitales = CA_TSP(Longitude, Latitude, Ciudades, "apodaca", 10000)
+    TSP_Capitales = CA_TSP(Longitude, Latitude, Ciudades, "monterrey", 10_000)
 
-    mejor_ruta, min_dist = TSP_Capitales.EncontrarSolucion()
-    print(mejor_ruta, min_dist)
+    TSP_Capitales.FindSolution()
+    print(TSP_Capitales.best_route, TSP_Capitales.best_route_dist)
+    TSP_Capitales.ShowCurrentSolution()
