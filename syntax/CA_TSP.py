@@ -61,22 +61,15 @@ class CA_TSP:
         - ruta: list representing the random route.
         - dist_rec: total distance of the random route.
         """
-
         TotalNewSelections = self.__N - 1
         ruta = [self.__Ini] + TotalNewSelections*["*"] + [self.__Ini]
         dist_rec = 0.0
 
         random_indexes = np.random.choice(self.__availableIndex, TotalNewSelections, replace=False)
+        dist_indices = np.concatenate(([self.__init_index], random_indexes, [self.__init_index]))
 
-        prev_index = self.__init_index
-        for k in range(1, TotalNewSelections+1):
-            k_index = random_indexes[k-1]
-
-            ruta[k] = self.__Names[k_index]
-            dist_rec += self.MatDist[prev_index, k_index]
-            prev_index = k_index
-        
-        dist_rec += self.MatDist[k_index, self.__init_index]
+        ruta[1:-1] = [self.__Names[k] for k in random_indexes]
+        dist_rec = np.sum(self.MatDist[dist_indices[:-1], dist_indices[1:]])
         
         return ruta, dist_rec
 
@@ -127,14 +120,14 @@ if __name__ == "__main__":
                                 "Latitude", "Longitude"])
     data = data.loc[data["Country"] == "mx", ["City", "Population", "Latitude", "Longitude"]]
     
-    q_pop = data["Population"].quantile(0.995)
+    q_pop = data["Population"].quantile(0.9925)
     data = data[data["Population"] >= q_pop]
 
     Longitude = data["Longitude"].to_numpy()
     Latitude = data["Latitude"].to_numpy()
     Ciudades = data["City"].to_list()
 
-    TSP_Capitales = CA_TSP(Longitude, Latitude, Ciudades, "monterrey", 10_000)
+    TSP_Capitales = CA_TSP(Longitude, Latitude, Ciudades, "monterrey", 10_000_000)
 
     TSP_Capitales.FindSolution()
     print(TSP_Capitales.best_route, TSP_Capitales.best_route_dist)
