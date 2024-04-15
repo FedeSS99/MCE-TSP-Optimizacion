@@ -70,7 +70,7 @@ class CA_TSP:
 
         ruta[1:-1] = [self.__Names[k] for k in random_indexes]
         dist_rec = np.sum(self.MatDist[dist_indices[:-1], dist_indices[1:]])
-        
+
         return ruta, dist_rec
 
 
@@ -99,7 +99,7 @@ class CA_TSP:
     def ShowCurrentSolution(self):
         FigureMap = Basemap(projection="merc", llcrnrlat=15, urcrnrlat=35,
                             llcrnrlon=-120, urcrnrlon=-85, resolution="i")
-        
+
         FigureMap.drawcoastlines()
         FigureMap.drawstates()
         FigureMap.drawcountries()
@@ -111,7 +111,7 @@ class CA_TSP:
         FigureMap.scatter(X_ruta, Y_ruta, marker = "^", color = "blue", latlon = True, zorder = 1)
 
         plt.title(f"TSP-Constructivo   N={self.__N} Dist={self.best_route_dist:.2f}")
-        
+
         plt.show()
 
 if __name__ == "__main__":
@@ -119,7 +119,7 @@ if __name__ == "__main__":
                        usecols=["Country", "City", "Population",
                                 "Latitude", "Longitude"])
     data = data.loc[data["Country"] == "mx", ["City", "Population", "Latitude", "Longitude"]]
-    
+
     q_pop = data["Population"].quantile(0.995)
     data = data[data["Population"] >= q_pop]
 
@@ -127,7 +127,7 @@ if __name__ == "__main__":
     Latitude = data["Latitude"].to_numpy()
     Ciudades = data["City"].to_list()
 
-    TSP_Capitales = CA_TSP(Longitude, Latitude, Ciudades, "monterrey", 10_000)
+    TSP_Capitales = CA_TSP(Longitude, Latitude, Ciudades, "monterrey", 25_000)
 
     TSP_Capitales.FindSolution()
     print(TSP_Capitales.best_route, TSP_Capitales.best_route_dist)
