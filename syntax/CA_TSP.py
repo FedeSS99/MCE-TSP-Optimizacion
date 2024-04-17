@@ -58,20 +58,20 @@ class CA_TSP:
         Find a random route for the TSP.
 
         Returns:
-        - ruta: list representing the random route.
+        - route: list representing the random route.
         - dist_rec: total distance of the random route.
         """
         TotalNewSelections = self.__N - 1
-        ruta = [self.__Ini] + TotalNewSelections*["*"] + [self.__Ini]
+        route = [self.__Ini] + TotalNewSelections*["*"] + [self.__Ini]
         dist_rec = 0.0
 
         random_indexes = np.random.choice(self.__availableIndex, TotalNewSelections, replace=False)
         dist_indices = np.concatenate(([self.__init_index], random_indexes, [self.__init_index]))
 
-        ruta[1:-1] = [self.__Names[k] for k in random_indexes]
+        route[1:-1] = [self.__Names[k] for k in random_indexes]
         dist_rec = np.sum(self.MatDist[dist_indices[:-1], dist_indices[1:]])
 
-        return ruta, dist_rec
+        return route, dist_rec
 
 
     def FindSolution(self):
@@ -82,18 +82,17 @@ class CA_TSP:
 
         n_iters = 0
         min_dist = np.inf
-        mejor_ruta = []
         while n_iters < self.__MaxIters:
-            ruta_actual, dist = self.__FindRandomRoute()
+            actual_route, dist = self.__FindRandomRoute()
             n_iters += 1
 
             if dist < min_dist:
-                mejor_ruta = [nodo for nodo in ruta_actual]
+                best_route = [nodo for nodo in actual_route]
                 min_dist = dist
 
                 print(f"#{n_iters} - {min_dist}", end="\n")
 
-        self.best_route = mejor_ruta
+        self.best_route = best_route
         self.best_route_dist = min_dist
 
     def ShowCurrentSolution(self):
@@ -106,9 +105,9 @@ class CA_TSP:
         FigureMap.drawparallels(np.arange(10, 40, 10), labels=[1,0,0,0], fontsize = 10)
         FigureMap.drawmeridians(np.arange(-70, -120, -10), labels=[0,0,0,1], fontsize = 10)
 
-        X_ruta, Y_ruta = zip(*[self.Nodes[nodo] for nodo in self.best_route])
-        FigureMap.plot(X_ruta, Y_ruta, "-r", linewidth = 2.0, latlon = True, zorder = 0)
-        FigureMap.scatter(X_ruta, Y_ruta, marker = "^", color = "blue", latlon = True, zorder = 1)
+        X_route, Y_route = zip(*[self.Nodes[index] for index in self.best_route])
+        FigureMap.plot(X_route, Y_route, "-r", linewidth = 2.0, latlon = True, zorder = 0)
+        FigureMap.scatter(X_route, Y_route, marker = "^", color = "blue", latlon = True, zorder = 1)
 
         plt.title(f"TSP-Constructivo   N={self.__N} Dist={self.best_route_dist:.2f}")
 
