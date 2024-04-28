@@ -97,8 +97,7 @@ Las restricciones del problema son las siguientes:
 
   ### Ejemplo
 
-<aside>
-❓ Supongamos que un vendedor necesita visitar 4 ciudades: A, B, C y D. Las distancias entre las ciudades son las siguientes:
+Supongamos que un vendedor necesita visitar 4 ciudades: A, B, C y D. Las distancias entre las ciudades son las siguientes:
 
 |  | A | B | C | D |
 | --- | --- | --- | --- | --- |
@@ -108,5 +107,3 @@ Las restricciones del problema son las siguientes:
 | D | 20 | 25 | 30 | 0 |
 
 *La ruta más corta posible para el vendedor en este ejemplo es A → B → D → C → A, con una distancia total de 80 unidades.*
-
-</aside>
