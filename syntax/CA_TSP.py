@@ -126,6 +126,11 @@ if __name__ == "__main__":
     Latitude = data["Latitude"].to_numpy()
     Ciudades = data["City"].to_list()
 
+    df_output = pd.DataFrame({"Cities": Ciudades, 
+                              "Longitud": Longitude,
+                              "Latitude": Latitude})
+    df_output.to_csv("./data/Top10PopCities.csv", index = False)
+
     TSP_Capitales = CA_TSP(Longitude, Latitude, Ciudades, "monterrey", 50_000)
 
     TSP_Capitales.FindSolution()
