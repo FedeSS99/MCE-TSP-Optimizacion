@@ -86,14 +86,10 @@ Las restricciones del problema son las siguientes:
     
 - El agente regresa a la ciudad de origen
     
-    $$
-    \sum_{i=1, i \not = j}^n  x_{ij} = 1, \forall j \in N
-    $$
+    $$\sum_{i=1, i \not = j}^n  x_{ij} = 1, \forall j \in N$$
     
 - No existen subtours, es decir, viajes que no incluyan todas las ciudades.
     
-    $$
-    u_i - u_j + nx_{ij} \leq n - 1, \forall i,j \in N, i \not = j, j > 1, u_1 = 1
-    $$
+    $$u_i - u_j + nx_{ij} \leq n - 1, \forall i,j \in N, i \not = j, j > 1, u_1 = 1$$
     
     Donde $u_i$  es una variable que indica el orden en el cual se visitan las ciudades. Esta formulación garantizada que el agente recorra todas las ciudades exactamente una vez y regrese al punto de partida, sin formar subtours.
