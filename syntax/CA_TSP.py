@@ -119,14 +119,14 @@ if __name__ == "__main__":
                                 "Latitude", "Longitude"])
     data = data.loc[data["Country"] == "mx", ["City", "Population", "Latitude", "Longitude"]]
 
-    q_pop = data["Population"].quantile(0.995)
+    q_pop = data["Population"].quantile(0.9945)
     data = data[data["Population"] >= q_pop]
 
     Longitude = data["Longitude"].to_numpy()
     Latitude = data["Latitude"].to_numpy()
     Ciudades = data["City"].to_list()
 
-    TSP_Capitales = CA_TSP(Longitude, Latitude, Ciudades, "monterrey", 25_000)
+    TSP_Capitales = CA_TSP(Longitude, Latitude, Ciudades, "monterrey", 50_000)
 
     TSP_Capitales.FindSolution()
     print(TSP_Capitales.best_route, TSP_Capitales.best_route_dist)
