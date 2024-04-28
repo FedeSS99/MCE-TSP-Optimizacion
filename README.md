@@ -52,4 +52,50 @@ La aplicación del Problema del Viajante (TSP) al General Transit Feed Specifica
     - `stops.txt`: indica la ubicación geográfica de las estaciones, así como el nombre con el que son comúnmente conocidas.
     - `stop_times.txt`: cuenta con la información del tiempo estimado de arribo entre las estaciones o paradas que conforman cada viaje.
  
- 
+---
+ # Descripción del problema
+
+El problema del agente viajero – Travel Salesman Problem (TSP por sus siglas en inglés) es un problema clásico de optimización con diversas aplicaciones en el mundo real donde se busca encontrar la ruta más eficiente para que un viajero visite un conjunto de ciudades y regrese a su punto de origen, minimizando la distancia total recorrida. 
+
+Matemáticamente, el TSP puede ser descrito con los siguientes componentes.
+
+### Parámetros
+
+1. **Conjunto de nodos:**  $N = \{1, 2, ...,n \}$ un conjunto de ciudades que se deben visitar.
+2. **Matriz de distancias: $D = [d_{ij}]_{n \times n}$**  una matriz $n \times n$, donde  $d_{ij}$ representa la distancia entre la ciudad *i* y la ciudad *j.* 
+
+### Variables de desición
+
+Serán de la forma $**x_{ij}$,** variables binarias, que serán 1 si el camino entre las ciudades *i* y *j*  se incluye en la solucuón y 0 en caso contrario.
+
+### Función objetivo
+
+Para el TSP, se busca la minimización de la distancia total recorrida, que puede representarse como
+
+$$
+min \sum_{i = 1}^n \sum_{j = 1}^n d_{ij}x_{ij}
+$$
+
+### Factibilidad
+
+Las restricciones del problema son las siguientes:
+
+- Cada nodo es visitado exactamente una vez
+    
+    $$
+    \sum_{j = 1, j \not = i}^n x_{ij} = 1, \forall i \in N 
+    $$
+    
+- El agente regresa a la ciudad de origen
+    
+    $$
+    \sum_{i=1, i \not = j}^n  x_{ij} = 1, \forall j \in N
+    $$
+    
+- No existen subtours, es decir, viajes que no incluyan todas las ciudades.
+    
+    $$
+    u_i - u_j + nx_{ij} \leq n - 1, \forall i,j \in N, i \not = j, j > 1, u_1 = 1
+    $$
+    
+    Donde $u_i$  es una variable que indica el orden en el cual se visitan las ciudades. Esta formulación garantizada que el agente recorra todas las ciudades exactamente una vez y regrese al punto de partida, sin formar subtours.
