@@ -107,3 +107,21 @@ Supongamos que un vendedor necesita visitar 4 ciudades: A, B, C y D. Las distanc
 | D | 20 | 25 | 30 | 0 |
 
 *La ruta más corta posible para el vendedor en este ejemplo es A → B → D → C → A, con una distancia total de 80 unidades.*
+
+## Descripción del método constructivo del problema
+
+1. Iteración:
+    - Mientras el número de iteraciones realizadas (**`n_iters`**) sea menor que el máximo permitido (**`MaxIters`**):
+2. Generación de Ruta Aleatoria:
+    - Calcular el número total de nuevas selecciones de nodos (**`TotalNuevasSelecciones`**) como la cantidad total de nodos menos uno.
+    - Inicializar una ruta (**`ruta`**) con el nodo inicial (**`Ini`**) al principio y al final, y marcando el resto como "*".
+    - Seleccionar índices aleatorios de nodos disponibles (**`índices_aleatorios`**) sin reemplazo.
+    - Concatenar los índices de nodo seleccionados con el nodo inicial para formar una lista de índices de distancia (**`índices_distancia`**).
+    - Asignar los nombres correspondientes a los nodos seleccionados en la ruta.
+    - Calcular la distancia recorrida (**`distancia_recorrida`**) sumando las distancias entre nodos consecutivos en **`índices_distancia`**.
+3. Evaluación de la Solución Actual:
+    - Incrementar el contador de iteraciones (**`n_iters`**) en uno.
+    - Si la distancia recorrida (**`distancia_recorrida`**) es menor que la distancia mínima encontrada hasta el momento (**`min_dist`**):
+        - Actualizar la mejor ruta (**`mejor_ruta`**) con la ruta actual.
+        - Actualizar la distancia mínima (**`min_dist`**) con la distancia recorrida.
+        - Imprimir el número de iteración actual (**`n_iters`**) junto con la distancia mínima encontrada (**`min_dist`**).
