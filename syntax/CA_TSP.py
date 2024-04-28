@@ -16,23 +16,28 @@ class CA_TSP:
     - Names: list of names corresponding to each node.
     - Ini: initial node for the TSP solution.
     - MaxIters: maximum number of iterations for the solution search.
+    - PosOrDist: True if the input is the position matrix or False if it's the distance matrix
     """
-    def __init__(self, Long:np.ndarray, Lat:np.ndarray, Names:list[str],
-                 Ini:str, MaxIters:int) -> None:
-        self.__Lat, self.__Long = Lat, Long
+    def __init__(self, Matrix:np.ndarray, Names:list[str],
+                 Ini:str, MaxIters:int, PosOrDist:bool = True) -> None:
         self.__Names : list[str] = Names
         self.__N : int = len(self.__Names)
 
-        self.Nodes = {}
-        for p in range(self.__N):
-            self.Nodes[self.__Names[p]] = (self.__Long[p], self.__Lat[p])
+        if PosOrDist:
+            self.__Long, self.__Lat = np.copy(Matrix[:,0].flatten()), np.copy(Matrix[:,1].flatten())
+            self.Nodes = {}
+            for p in range(self.__N):
+                self.Nodes[self.__Names[p]] = (self.__Long[p], self.__Lat[p])
+            
+            self.MatDist = self.__ObtainDistanceMatrix()
+        else:
+            self.MatDist = np.copy(Matrix)
 
         self.__Ini : str = Ini
         self.__init_index = self.__Names.index(self.__Ini)
         self.__availableIndex = np.delete(np.arange(self.__N), self.__init_index)
         self.__MaxIters : int = MaxIters
 
-        self.MatDist = self.__ObtainDistanceMatrix()
 
         print(f"-- Random Constructive Method --\nN = {self.__N}\nInitial Node: {self.__Ini}")
 
@@ -51,7 +56,7 @@ class CA_TSP:
         prodcosLat = np.cos(Lat)*(np.cos(Lat).T)
         arg_arcsin = np.sqrt(0.5 * (1 - cos_difLat + prodcosLat* ( 1.0 - cos_difLong)))
 
-        return 2.0 * 6371 * np.arcsin(arg_arcsin)
+        return 2.0 * 6371.0 * np.arcsin(arg_arcsin)
 
     def __FindRandomRoute(self):
         """
@@ -122,16 +127,23 @@ if __name__ == "__main__":
     q_pop = data["Population"].quantile(0.9945)
     data = data[data["Population"] >= q_pop]
 
-    Longitude = data["Longitude"].to_numpy()
-    Latitude = data["Latitude"].to_numpy()
-    Ciudades = data["City"].to_list()
+    Positions = np.vstack((data["Longitude"].to_numpy(), data["Latitude"].to_numpy())).T
+    Names = data["City"].to_list()
 
-    df_output = pd.DataFrame({"Cities": Ciudades, 
-                              "Longitud": Longitude,
-                              "Latitude": Latitude})
+    df_output = pd.DataFrame({"Cities": Names, 
+                              "Longitude": Positions[:,0],
+                              "Latitude": Positions[:,1]})
     df_output.to_csv("./data/Top10PopCities.csv", index = False)
 
-    TSP_Capitales = CA_TSP(Longitude, Latitude, Ciudades, "monterrey", 50_000)
+    """
+    Dists = np.array([[0, 10, 15, 20],
+                      [10, 0, 35, 25],
+                      [15, 35, 0, 30],
+                      [20, 25, 30, 0]], dtype=np.float32)
+    Names = ["A", "B", "C", "D"]
+    """
+
+    TSP_Capitales = CA_TSP(Positions, Names, "monterrey", 50_000, PosOrDist=True)
 
     TSP_Capitales.FindSolution()
     print(TSP_Capitales.best_route, TSP_Capitales.best_route_dist)
