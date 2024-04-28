@@ -95,7 +95,7 @@ Las restricciones del problema son las siguientes:
     Donde $u_i$  es una variable que indica el orden en el cual se visitan las ciudades. Esta formulación garantizada que el agente recorra todas las ciudades exactamente una vez y regrese al punto de partida, sin formar subtours.
 
 
-  ### Ejemplo
+### Ejemplo
 
 Supongamos que un vendedor necesita visitar 4 ciudades: A, B, C y D. Las distancias entre las ciudades son las siguientes:
 
