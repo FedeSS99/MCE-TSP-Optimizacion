@@ -1,4 +1,5 @@
 # Aplicación del TSP al GTFS de Ciudad de México para la planificación eficiente de rutas
+Por Semiramís G. de la Cruz y Federico Salinas Samaniego 
 
 # Introducción
 
