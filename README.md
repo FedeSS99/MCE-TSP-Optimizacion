@@ -93,3 +93,20 @@ Las restricciones del problema son las siguientes:
     $$u_i - u_j + nx_{ij} \leq n - 1, \forall i,j \in N, i \not = j, j > 1, u_1 = 1$$
     
     Donde $u_i$  es una variable que indica el orden en el cual se visitan las ciudades. Esta formulación garantizada que el agente recorra todas las ciudades exactamente una vez y regrese al punto de partida, sin formar subtours.
+
+
+  ### Ejemplo
+
+<aside>
+❓ Supongamos que un vendedor necesita visitar 4 ciudades: A, B, C y D. Las distancias entre las ciudades son las siguientes:
+
+|  | A | B | C | D |
+| --- | --- | --- | --- | --- |
+| A | 0 | 10 | 15 | 20 |
+| B | 10 | 0 | 35 | 25 |
+| C | 15 | 35 | 0 | 30 |
+| D | 20 | 25 | 30 | 0 |
+
+*La ruta más corta posible para el vendedor en este ejemplo es A → B → D → C → A, con una distancia total de 80 unidades.*
+
+</aside>
