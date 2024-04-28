@@ -82,9 +82,7 @@ Las restricciones del problema son las siguientes:
 
 - Cada nodo es visitado exactamente una vez
     
-    $$
-    \sum_{j = 1, j \not = i}^n x_{ij} = 1, \forall i \in N 
-    $$
+    $$\sum_{j = 1, j \not = i}^n x_{ij} = 1, \forall i \in N$$
     
 - El agente regresa a la ciudad de origen
     
