@@ -148,5 +148,3 @@ if __name__ == "__main__":
     TSP_Capitales.FindSolution()
     print(TSP_Capitales.best_route, TSP_Capitales.best_route_dist)
     TSP_Capitales.ShowCurrentSolution()
-
-    print("Hi! :)")
