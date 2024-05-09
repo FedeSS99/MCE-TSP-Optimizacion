@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-from mpl_toolkits.basemap import Basemap
+#from mpl_toolkits.basemap import Basemap
 import matplotlib.pyplot as plt
 from matplotlib import rcParams
 
@@ -119,21 +119,21 @@ class CA_TSP:
         plt.show()
 
 if __name__ == "__main__":
-    data = pd.read_csv("./data/worldcitiespop.csv",
-                       usecols=["Country", "City", "Population",
-                                "Latitude", "Longitude"])
-    data = data.loc[data["Country"] == "mx", ["City", "Population", "Latitude", "Longitude"]]
+    data = pd.read_csv("SemiramisGarcia_FedericoSalinas_datos.csv")
+    #                   usecols=["Country", "City", "Population",
+    #                            "Latitude", "Longitude"])
+    #data = data.loc[data["Country"] == "mx", ["City", "Population", "Latitude", "Longitude"]]
 
-    q_pop = data["Population"].quantile(0.9945)
-    data = data[data["Population"] >= q_pop]
+    #q_pop = data["Population"].quantile(0.9945)
+    #data = data[data["Population"] >= q_pop]
 
     Positions = np.vstack((data["Longitude"].to_numpy(), data["Latitude"].to_numpy())).T
-    Names = data["City"].to_list()
+    Names = data["Cities"].to_list()
 
-    df_output = pd.DataFrame({"Cities": Names, 
-                              "Longitude": Positions[:,0],
-                              "Latitude": Positions[:,1]})
-    df_output.to_csv("./data/Top10PopCities.csv", index = False)
+    #df_output = pd.DataFrame({"Cities": Names, 
+    #                          "Longitude": Positions[:,0],
+    #                          "Latitude": Positions[:,1]})
+    #df_output.to_csv("./data/Top10PopCities.csv", index = False)
 
     """
     Dists = np.array([[0, 10, 15, 20],
@@ -147,4 +147,4 @@ if __name__ == "__main__":
 
     TSP_Capitales.FindSolution()
     print(TSP_Capitales.best_route, TSP_Capitales.best_route_dist)
-    TSP_Capitales.ShowCurrentSolution()
+    #TSP_Capitales.ShowCurrentSolution()
