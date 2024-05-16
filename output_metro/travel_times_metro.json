@@ -1,806 +1,1196 @@
 {
     "CMX0200L1": [
         [
-            "0200L1-OBSERVATORIO",
-            "P0DT0H0M0S"
+            "OBSERVATORIO",
+            "P0DT0H0M0S",
+            -99.2004,
+            19.39828
         ],
         [
-            "0200L1-TACUBAYA",
-            "P0DT0H2M50S"
+            "TACUBAYA",
+            "P0DT0H2M50S",
+            -99.18764,
+            19.40251
         ],
         [
-            "0200L1-JUANACATLAN",
-            "P0DT0H2M34S"
+            "JUANACATLAN",
+            "P0DT0H2M34S",
+            -99.18198,
+            19.41295
         ],
         [
-            "0200L1-CHAPULTEPEC",
-            "P0DT0H2M12S"
+            "CHAPULTEPEC",
+            "P0DT0H2M12S",
+            -99.17642,
+            19.42075
         ],
         [
-            "0200L1-SEVILLA",
-            "P0DT0H1M7S"
+            "SEVILLA",
+            "P0DT0H1M7S",
+            -99.17112,
+            19.42185
         ],
         [
-            "0200L1-INSURGENTES",
-            "P0DT0H1M39S"
+            "INSURGENTES",
+            "P0DT0H1M39S",
+            -99.16329,
+            19.42365
         ],
         [
-            "0200L1-CUAUHTEMOC",
-            "P0DT0H1M51S"
+            "CUAUHTEMOC",
+            "P0DT0H1M51S",
+            -99.1546,
+            19.42566
         ],
         [
-            "0200L1-BALDERAS",
-            "P0DT0H1M5S"
+            "BALDERAS",
+            "P0DT0H1M5S",
+            -99.14948,
+            19.427
         ],
         [
-            "0200L1-SALTODELAGUA",
-            "P0DT0H1M16S"
+            "SALTODELAGUA",
+            "P0DT0H1M16S",
+            -99.14341,
+            19.42695
         ],
         [
-            "0200L1-ISABELLACA",
-            "P0DT0H1M9S"
+            "ISABELLACA",
+            "P0DT0H1M9S",
+            -99.13783,
+            19.42639
         ],
         [
-            "0200L1-PINOSUAREZ",
-            "P0DT0H1M4S"
+            "PINOSUAREZ",
+            "P0DT0H1M4S",
+            -99.13264,
+            19.42592
         ],
         [
-            "0200L1-MERCED",
-            "P0DT0H1M36S"
+            "MERCED",
+            "P0DT0H1M36S",
+            -99.12503,
+            19.42549
         ],
         [
-            "0200L1-CANDELARIA",
-            "P0DT0H1M41S"
+            "CANDELARIA",
+            "P0DT0H1M41S",
+            -99.12091,
+            19.42954
         ],
         [
-            "0200L1-SANLAZARO",
-            "P0DT0H2M4S"
+            "SANLAZARO",
+            "P0DT0H2M4S",
+            -99.11426,
+            19.43006
         ],
         [
-            "0200L1_MOCTEZUMA",
-            "P0DT0H1M11S"
+            "MOCTEZUMA",
+            "P0DT0H1M11S",
+            -99.1098,
+            19.42685
         ],
         [
-            "0200L1-BALBUENA",
-            "P0DT0H1M38S"
+            "BALBUENA",
+            "P0DT0H1M38S",
+            -99.10277,
+            19.42336
         ],
         [
-            "0200L1-PTOAEREO",
-            "P0DT0H1M32S"
+            "PTOAEREO",
+            "P0DT0H1M32S",
+            -99.09626,
+            19.41994
         ],
         [
-            "0200L1-GOMEZFARIAS",
-            "P0DT0H1M27S"
+            "GOMEZFARIAS",
+            "P0DT0H1M27S",
+            -99.09021,
+            19.41648
         ],
         [
-            "0200L1-ZARAGOZA",
-            "P0DT0H1M54S"
+            "ZARAGOZA",
+            "P0DT0H1M54S",
+            -99.08229,
+            19.41192
         ],
         [
-            "0200L1-PANTITLAN",
-            "P0DT0H2M48S"
+            "PANTITLAN",
+            "P0DT0H2M48S",
+            -99.07474,
+            19.41633
         ]
     ],
     "CMX0200L2": [
         [
-            "0200L2-CUATROCAMIN",
-            "P0DT0H0M0S"
+            "CUATROCAMIN",
+            "P0DT0H0M0S",
+            -99.21584,
+            19.45959
         ],
         [
-            "0200L2-PANTEONES",
-            "P0DT0H3M19S"
+            "PANTEONES",
+            "P0DT0H3M19S",
+            -99.20295,
+            19.45864
         ],
         [
-            "0200L2-TACUBA",
-            "P0DT0H2M55S"
+            "TACUBA",
+            "P0DT0H2M55S",
+            -99.18823,
+            19.45938
         ],
         [
-            "0200L2-CUITLAHUAC",
-            "P0DT0H1M24S"
+            "CUITLAHUAC",
+            "P0DT0H1M24S",
+            -99.1815,
+            19.45725
         ],
         [
-            "0200L2-POPOTLA",
-            "P0DT0H1M28S"
+            "POPOTLA",
+            "P0DT0H1M28S",
+            -99.17549,
+            19.45291
         ],
         [
-            "0200L2-COLMILITAR",
-            "P0DT0H1M3S"
+            "COLMILITAR",
+            "P0DT0H1M3S",
+            -99.17178,
+            19.44927
         ],
         [
-            "0200L2-NORMAL",
-            "P0DT0H1M20S"
+            "NORMAL",
+            "P0DT0H1M20S",
+            -99.16727,
+            19.44456
         ],
         [
-            "0200L2-SANCOSME",
-            "P0DT0H1M24S"
+            "SANCOSME",
+            "P0DT0H1M24S",
+            -99.16066,
+            19.4419
         ],
         [
-            "0200L2-REVOLUCION",
-            "P0DT0H1M22S"
+            "REVOLUCION",
+            "P0DT0H1M22S",
+            -99.15423,
+            19.43923
         ],
         [
-            "0200L2-HIDALGO",
-            "P0DT0H1M24S"
+            "HIDALGO",
+            "P0DT0H1M24S",
+            -99.14722,
+            19.43755
         ],
         [
-            "0200L2-BELLASARTES",
-            "P0DT0H1M7S"
+            "BELLASARTES",
+            "P0DT0H1M7S",
+            -99.14161,
+            19.43638
         ],
         [
-            "0200L2-ALLENDE",
-            "P0DT0H0M56S"
+            "ALLENDE",
+            "P0DT0H0M56S",
+            -99.13687,
+            19.43556
         ],
         [
-            "0200L2-ZOCALO",
-            "P0DT0H1M23S"
+            "ZOCALO",
+            "P0DT0H1M23S",
+            -99.13225,
+            19.4325
         ],
         [
-            "0200L2-PINOSUAREZ",
-            "P0DT0H1M40S"
+            "PINOSUAREZ",
+            "P0DT0H1M40S",
+            -99.13294,
+            19.42438
         ],
         [
-            "0200L2-SANANTONIO",
-            "P0DT0H1M48S"
+            "SANANTONIO",
+            "P0DT0H1M48S",
+            -99.13454,
+            19.41602
         ],
         [
-            "0200L2-CHABACANO",
-            "P0DT0H1M25S"
+            "CHABACANO",
+            "P0DT0H1M25S",
+            -99.13562,
+            19.40918
         ],
         [
-            "0200L2-VIADUCTO",
-            "P0DT0H1M43S"
+            "VIADUCTO",
+            "P0DT0H1M43S",
+            -99.1369,
+            19.40087
         ],
         [
-            "0200L2-XOLA",
-            "P0DT0H1M10S"
+            "XOLA",
+            "P0DT0H1M10S",
+            -99.13781,
+            19.39521
         ],
         [
-            "0200L2-VILLADECORT",
-            "P0DT0H1M35S"
+            "VILLADECORT",
+            "P0DT0H1M35S",
+            -99.13896,
+            19.38758
         ],
         [
-            "0200L2-NATIVITAS",
-            "P0DT0H1M33S"
+            "NATIVITAS",
+            "P0DT0H1M33S",
+            -99.14002,
+            19.38005
         ],
         [
-            "0200L2-PORTALES",
-            "P0DT0H2M6S"
+            "PORTALES",
+            "P0DT0H2M6S",
+            -99.14157,
+            19.36992
         ],
         [
-            "0200L2-ERMITA",
-            "P0DT0H1M39S"
+            "ERMITA",
+            "P0DT0H1M39S",
+            -99.1429,
+            19.36198
         ],
         [
-            "0200L2-GRALANAYA",
-            "P0DT0H1M50S"
+            "GRALANAYA",
+            "P0DT0H1M50S",
+            -99.14501,
+            19.35324
         ],
         [
-            "0200L2-TASQUENA",
-            "P0DT0H2M47S"
+            "TASQUENA",
+            "P0DT0H2M47S",
+            -99.13953,
+            19.34376
         ]
     ],
     "CMX0200L3": [
         [
-            "0200L3-INDIOSVERD",
-            "P0DT0H0M0S"
+            "INDIOSVERD",
+            "P0DT0H0M0S",
+            -99.11951,
+            19.49534
         ],
         [
-            "0200L3-DTVO18MARZO",
-            "P0DT0H2M25S"
+            "DTVO18MARZO",
+            "P0DT0H2M25S",
+            -99.1255,
+            19.48511
         ],
         [
-            "0200L3-POTRERO",
-            "P0DT0H2M2S"
+            "POTRERO",
+            "P0DT0H2M2S",
+            -99.13201,
+            19.47719
         ],
         [
-            "0200L3-LARAZA",
-            "P0DT0H2M13S"
+            "LARAZA",
+            "P0DT0H2M13S",
+            -99.13951,
+            19.46888
         ],
         [
-            "0200L3-TLATELOLCO",
-            "P0DT0H2M59S"
+            "TLATELOLCO",
+            "P0DT0H2M59S",
+            -99.14313,
+            19.45506
         ],
         [
-            "0200L3-GUERRERO",
-            "P0DT0H2M8S"
+            "GUERRERO",
+            "P0DT0H2M8S",
+            -99.14519,
+            19.44473
         ],
         [
-            "0200L3-HIDALGO",
-            "P0DT0H1M31S"
+            "HIDALGO",
+            "P0DT0H1M31S",
+            -99.14678,
+            19.43738
         ],
         [
-            "0200L3-JUAREZ",
-            "P0DT0H0M51S"
+            "JUAREZ",
+            "P0DT0H0M51S",
+            -99.14768,
+            19.43325
         ],
         [
-            "0200L3-BALDERAS",
-            "P0DT0H1M24S"
+            "BALDERAS",
+            "P0DT0H1M24S",
+            -99.14906,
+            19.42648
         ],
         [
-            "0200L3-NINOSHEROES",
-            "P0DT0H1M26S"
+            "NINOSHEROES",
+            "P0DT0H1M26S",
+            -99.15036,
+            19.41948
         ],
         [
-            "0200L3-HOSPITALGRAL",
-            "P0DT0H1M25S"
+            "HOSPITALGRAL",
+            "P0DT0H1M25S",
+            -99.15325,
+            19.41376
         ],
         [
-            "0200L3-CENTROMEDICO",
-            "P0DT0H1M22S"
+            "CENTROMEDICO",
+            "P0DT0H1M22S",
+            -99.15515,
+            19.40773
         ],
         [
-            "0200L3-ETIOPIA",
-            "P0DT0H2M24S"
+            "ETIOPIA",
+            "P0DT0H2M24S",
+            -99.15603,
+            19.39592
         ],
         [
-            "0200L3-EUGENIA",
-            "P0DT0H1M59S"
+            "EUGENIA",
+            "P0DT0H1M59S",
+            -99.1572,
+            19.38617
         ],
         [
-            "0200L3-DIVISIONNTE",
-            "P0DT0H1M29S"
+            "DIVISIONNTE",
+            "P0DT0H1M29S",
+            -99.15948,
+            19.37918
         ],
         [
-            "0200L3-ZAPATA",
-            "P0DT0H1M53S"
+            "ZAPATA",
+            "P0DT0H1M53S",
+            -99.16451,
+            19.37119
         ],
         [
-            "0200L3-COYOACAN",
-            "P0DT0H2M20S"
+            "COYOACAN",
+            "P0DT0H2M20S",
+            -99.17086,
+            19.36136
         ],
         [
-            "0200L3-VIVEROS",
-            "P0DT0H1M54S"
+            "VIVEROS",
+            "P0DT0H1M54S",
+            -99.176,
+            19.35346
         ],
         [
-            "0200L3-MAQ",
-            "P0DT0H1M48S"
+            "MAQ",
+            "P0DT0H1M48S",
+            -99.18076,
+            19.34625
         ],
         [
-            "0200L3-COPILCO",
-            "P0DT0H2M42S"
+            "COPILCO",
+            "P0DT0H2M42S",
+            -99.17697,
+            19.3361
         ],
         [
-            "0200L3-UNIVERSIDAD",
-            "P0DT0H2M38S"
+            "UNIVERSIDAD",
+            "P0DT0H2M38S",
+            -99.17394,
+            19.32435
         ]
     ],
     "CMX0200L4": [
         [
-            "0200L4-SNTAANITA",
-            "P0DT0H0M0S"
+            "SNTAANITA",
+            "P0DT0H0M0S",
+            -99.1217,
+            19.40289
         ],
         [
-            "0200L4-JAMAICA",
-            "P0DT0H1M30S"
+            "JAMAICA",
+            "P0DT0H1M30S",
+            -99.12174,
+            19.41092
         ],
         [
-            "0200L4-FRAYSERVANDO",
-            "P0DT0H2M1S"
+            "FRAYSERVANDO",
+            "P0DT0H2M1S",
+            -99.12053,
+            19.42159
         ],
         [
-            "0200L4-CANDELARIA",
-            "P0DT0H1M21S"
+            "CANDELARIA",
+            "P0DT0H1M21S",
+            -99.11943,
+            19.42876
         ],
         [
-            "0200L4-MORELOS",
-            "P0DT0H2M4S"
+            "MORELOS",
+            "P0DT0H2M4S",
+            -99.11815,
+            19.43966
         ],
         [
-            "0200L4-CANALNTE",
-            "P0DT0H1M47S"
+            "CANALNTE",
+            "P0DT0H1M47S",
+            -99.11613,
+            19.44895
         ],
         [
-            "0200L4-CONSULADO",
-            "P0DT0H1M45S"
+            "CONSULADO",
+            "P0DT0H1M45S",
+            -99.1139,
+            19.45802
         ],
         [
-            "0200L4-BONDOJITO",
-            "P0DT0H1M17S"
+            "BONDOJITO",
+            "P0DT0H1M17S",
+            -99.11198,
+            19.46463
         ],
         [
-            "0200L4-TALISMAN",
-            "P0DT0H1M58S"
+            "TALISMAN",
+            "P0DT0H1M58S",
+            -99.10801,
+            19.47436
         ],
         [
-            "0200L4-MARTINCARR",
-            "P0DT0H2M9S"
+            "MARTINCARR",
+            "P0DT0H2M9S",
+            -99.10437,
+            19.48504
         ]
     ],
     "CMX0200L5": [
         [
-            "0200L5-POLITECNICO",
-            "P0DT0H0M0S"
+            "POLITECNICO",
+            "P0DT0H0M0S",
+            -99.14921,
+            19.50068
         ],
         [
-            "0200L5-ITOPETROLEO",
-            "P0DT0H2M15S"
+            "ITOPETROLEO",
+            "P0DT0H2M15S",
+            -99.14471,
+            19.48934
         ],
         [
-            "0200L5-AUTOBUSESNTE",
-            "P0DT0H2M2S"
+            "AUTOBUSESNTE",
+            "P0DT0H2M2S",
+            -99.14065,
+            19.47907
         ],
         [
-            "0200L5-LARAZA",
-            "P0DT0H1M54S"
+            "LARAZA",
+            "P0DT0H1M54S",
+            -99.13652,
+            19.46967
         ],
         [
-            "0200L5-MISTERIOS",
-            "P0DT0H1M40S"
+            "MISTERIOS",
+            "P0DT0H1M40S",
+            -99.13024,
+            19.46311
         ],
         [
-            "0200L5-VALLEGOMEZ",
-            "P0DT0H2M4S"
+            "VALLEGOMEZ",
+            "P0DT0H2M4S",
+            -99.11949,
+            19.45887
         ],
         [
-            "0200L5-CONSULADO",
-            "P0DT0H1M16S"
+            "CONSULADO",
+            "P0DT0H1M16S",
+            -99.11354,
+            19.45514
         ],
         [
-            "0200L5-EDUARDOMOLI",
-            "P0DT0H1M37S"
+            "EDUARDOMOLI",
+            "P0DT0H1M37S",
+            -99.1053,
+            19.4514
         ],
         [
-            "0200L5-ARAGON",
-            "P0DT0H1M42S"
+            "ARAGON",
+            "P0DT0H1M42S",
+            -99.09621,
+            19.45126
         ],
         [
-            "0200L5-OCEANIA",
-            "P0DT0H2M14S"
+            "OCEANIA",
+            "P0DT0H2M14S",
+            -99.08687,
+            19.44502
         ],
         [
-            "0200L5-TNALAEREA",
-            "P0DT0H2M10S"
+            "TNALAEREA",
+            "P0DT0H2M10S",
+            -99.08808,
+            19.43427
         ],
         [
-            "0200L5-HANGARES",
-            "P0DT0H2M20S"
+            "HANGARES",
+            "P0DT0H2M20S",
+            -99.08813,
+            19.42435
         ],
         [
-            "0200L5-PANTITLAN",
-            "P0DT0H3M0S"
+            "PANTITLAN",
+            "P0DT0H3M0S",
+            -99.07433,
+            19.4151
         ]
     ],
     "CMX0200L6": [
         [
-            "0200L6-ELROSARIO",
-            "P0DT0H0M0S"
+            "ELROSARIO",
+            "P0DT0H0M0S",
+            -99.19977,
+            19.50463
         ],
         [
-            "0200L6-TEZOZOMOC",
-            "P0DT0H2M11S"
+            "TEZOZOMOC",
+            "P0DT0H2M11S",
+            -99.19602,
+            19.4949
         ],
         [
-            "0200L6-AZCAPOTZALCO",
-            "P0DT0H1M45S"
+            "AZCAPOTZALCO",
+            "P0DT0H1M45S",
+            -99.18627,
+            19.49091
         ],
         [
-            "0200L6-FERRERIA",
-            "P0DT0H2M2S"
+            "FERRERIA",
+            "P0DT0H2M2S",
+            -99.17415,
+            19.49067
         ],
         [
-            "0200L6-NORTE45",
-            "P0DT0H1M55S"
+            "NORTE45",
+            "P0DT0H1M55S",
+            -99.16299,
+            19.48867000000001
         ],
         [
-            "0200L6-VALLEJO",
-            "P0DT0H1M18S"
+            "VALLEJO",
+            "P0DT0H1M18S",
+            -99.156,
+            19.48985
         ],
         [
-            "0200L6-ITOPETROLEO",
-            "P0DT0H1M24S"
+            "ITOPETROLEO",
+            "P0DT0H1M24S",
+            -99.14813,
+            19.49104
         ],
         [
-            "0200L6-LINDAVISTA",
-            "P0DT0H2M12S"
+            "LINDAVISTA",
+            "P0DT0H2M12S",
+            -99.13507,
+            19.48811
         ],
         [
-            "0200L6-DTVO18MARZO",
-            "P0DT0H1M49S"
+            "DTVO18MARZO",
+            "P0DT0H1M49S",
+            -99.1253,
+            19.48348
         ],
         [
-            "0200L6-LAVILLA",
-            "P0DT0H1M10S"
+            "LAVILLA",
+            "P0DT0H1M10S",
+            -99.11837,
+            19.48174
         ],
         [
-            "0200L6-MARTINCARR",
-            "P0DT0H1M57S"
+            "MARTINCARR",
+            "P0DT0H1M57S",
+            -99.10748,
+            19.48294
         ]
     ],
     "CMX0200L7": [
         [
-            "0200L7-ELROSARIO",
-            "P0DT0H0M0S"
+            "ELROSARIO",
+            "P0DT0H0M0S",
+            -99.20012,
+            19.50474
         ],
         [
-            "0200L7-AQUILESSERD",
-            "P0DT0H2M56S"
+            "AQUILESSERD",
+            "P0DT0H2M56S",
+            -99.19535,
+            19.49064
         ],
         [
-            "0200L7-CAMARONES",
-            "P0DT0H2M26S"
+            "CAMARONES",
+            "P0DT0H2M26S",
+            -99.19004,
+            19.47911
         ],
         [
-            "0200L7-REFINERIA",
-            "P0DT0H1M44S"
+            "REFINERIA",
+            "P0DT0H1M44S",
+            -99.19051,
+            19.46947
         ],
         [
-            "0200L7-TACUBA",
-            "P0DT0H2M22S"
+            "TACUBA",
+            "P0DT0H2M22S",
+            -99.18717,
+            19.45823
         ],
         [
-            "0200L7-SANJOAQUIN",
-            "P0DT0H2M34S"
+            "SANJOAQUIN",
+            "P0DT0H2M34S",
+            -99.19177,
+            19.44501
         ],
         [
-            "0200L7-POLANCO",
-            "P0DT0H2M8S"
+            "POLANCO",
+            "P0DT0H2M8S",
+            -99.19093,
+            19.43355
         ],
         [
-            "0200L7-AUDITORIO",
-            "P0DT0H1M24S"
+            "AUDITORIO",
+            "P0DT0H1M24S",
+            -99.19203,
+            19.42576
         ],
         [
-            "0200L7-CONSTITUYENTES",
-            "P0DT0H2M41S"
+            "CONSTITUYENTES",
+            "P0DT0H2M41S",
+            -99.19135,
+            19.41177
         ],
         [
-            "0200L7-TACUBAYA",
-            "P0DT0H1M53S"
+            "TACUBAYA",
+            "P0DT0H1M53S",
+            -99.18675,
+            19.40219
         ],
         [
-            "0200L7-SANPEDROPINOS",
-            "P0DT0H2M1S"
+            "SANPEDROPINOS",
+            "P0DT0H2M1S",
+            -99.18581,
+            19.39149
         ],
         [
-            "0200L7-SANANTONIO",
-            "P0DT0H1M17S"
+            "SANANTONIO",
+            "P0DT0H1M17S",
+            -99.18661,
+            19.38434
         ],
         [
-            "0200L7-MIXCOAC",
-            "P0DT0H1M27S"
+            "MIXCOAC",
+            "P0DT0H1M27S",
+            -99.18758,
+            19.37626
         ],
         [
-            "0200L7-BARRANCA",
-            "P0DT0H2M40S"
+            "BARRANCA",
+            "P0DT0H2M40S",
+            -99.18926,
+            19.3615
         ]
     ],
     "CMX0200L8": [
         [
-            "0200L8-GARIBALDI",
-            "P0DT0H0M0S"
+            "GARIBALDI",
+            "P0DT0H0M0S",
+            -99.139,
+            19.44400000000001
         ],
         [
-            "0200L8-BELLASARTES",
-            "P0DT0H1M23S"
+            "BELLASARTES",
+            "P0DT0H1M23S",
+            -99.14042,
+            19.43701
         ],
         [
-            "0200L8-SANJUANLETRAN",
-            "P0DT0H1M3S"
+            "SANJUANLETRAN",
+            "P0DT0H1M3S",
+            -99.14125,
+            19.43158
         ],
         [
-            "0200L8-SALTOAGUA",
-            "P0DT0H0M45S"
+            "SALTOAGUA",
+            "P0DT0H0M45S",
+            -99.14185,
+            19.42772
         ],
         [
-            "0200L8-DOCTORES",
-            "P0DT0H1M13S"
+            "DOCTORES",
+            "P0DT0H1M13S",
+            -99.14319,
+            19.42155
         ],
         [
-            "0200L8-OBRERA",
-            "P0DT0H1M37S"
+            "OBRERA",
+            "P0DT0H1M37S",
+            -99.14404,
+            19.41324
         ],
         [
-            "0200L8-CHABACANO",
-            "P0DT0H2M16S"
+            "CHABACANO",
+            "P0DT0H2M16S",
+            -99.13375,
+            19.41021
         ],
         [
-            "0200L8-LAVIGA",
-            "P0DT0H1M41S"
+            "LAVIGA",
+            "P0DT0H1M41S",
+            -99.12627,
+            19.40671
         ],
         [
-            "0200L8-STAANITA",
-            "P0DT0H1M22S"
+            "STAANITA",
+            "P0DT0H1M22S",
+            -99.12066,
+            19.40412
         ],
         [
-            "0200L8-COYUYA",
-            "P0DT0H2M2S"
+            "COYUYA",
+            "P0DT0H2M2S",
+            -99.11348,
+            19.3983
         ],
         [
-            "0200L8-IZTACALCO",
-            "P0DT0H2M0S"
+            "IZTACALCO",
+            "P0DT0H2M0S",
+            -99.11211,
+            19.38829
         ],
         [
-            "0200L8-APATLACO",
-            "P0DT0H1M51S"
+            "APATLACO",
+            "P0DT0H1M51S",
+            -99.10949,
+            19.3791
         ],
         [
-            "0200L8-ACULCO",
-            "P0DT0H1M11S"
+            "ACULCO",
+            "P0DT0H1M11S",
+            -99.1077,
+            19.37321
         ],
         [
-            "0200L8-ESCUADRON",
-            "P0DT0H1M39S"
+            "ESCUADRON",
+            "P0DT0H1M39S",
+            -99.10948,
+            19.36484
         ],
         [
-            "0200L8-ATLALILCO",
-            "P0DT0H3M18S"
+            "ATLALILCO",
+            "P0DT0H3M18S",
+            -99.10131,
+            19.35608
         ],
         [
-            "0200L8-IZTAPALAPA",
-            "P0DT0H1M29S"
+            "IZTAPALAPA",
+            "P0DT0H1M29S",
+            -99.09345,
+            19.35783
         ],
         [
-            "0200L8-CERROESTRELLA",
-            "P0DT0H1M36S"
+            "CERROESTRELLA",
+            "P0DT0H1M36S",
+            -99.08562,
+            19.35605
         ],
         [
-            "0200L8-UAM-I",
-            "P0DT0H2M12S"
+            "UAM",
+            "P0DT0H2M12S",
+            -99.07482,
+            19.35106
         ],
         [
-            "0200L8-CONST1917",
-            "P0DT0H2M15S"
+            "CONST1917",
+            "P0DT0H2M15S",
+            -99.0638,
+            19.34597
         ]
     ],
     "CMX0200L9": [
         [
-            "0200L9-PANTITLAN",
-            "P0DT0H0M0S"
+            "PANTITLAN",
+            "P0DT0H0M0S",
+            -99.07221,
+            19.41535
         ],
         [
-            "0200L9-PUEBLA",
-            "P0DT0H2M47S"
+            "PUEBLA",
+            "P0DT0H2M47S",
+            -99.08239,
+            19.40719
         ],
         [
-            "0200L9-CIUDADDVA",
-            "P0DT0H1M42S"
+            "CIUDADDVA",
+            "P0DT0H1M42S",
+            -99.09125,
+            19.40843
         ],
         [
-            "0200L9-VELODROMO",
-            "P0DT0H2M17S"
+            "VELODROMO",
+            "P0DT0H2M17S",
+            -99.10316,
+            19.40854
         ],
         [
-            "0200L9-MIXIUHCA",
-            "P0DT0H1M52S"
+            "MIXIUHCA",
+            "P0DT0H1M52S",
+            -99.11297,
+            19.40837
         ],
         [
-            "0200L9-JAMAICA",
-            "P0DT0H1M47S"
+            "JAMAICA",
+            "P0DT0H1M47S",
+            -99.12235,
+            19.4091
         ],
         [
-            "0200L9-CHABACANO",
-            "P0DT0H2M12S"
+            "CHABACANO",
+            "P0DT0H2M12S",
+            -99.13397,
+            19.40851
         ],
         [
-            "0200L9-LAZAROCAR",
-            "P0DT0H2M3S"
+            "LAZAROCAR",
+            "P0DT0H2M3S",
+            -99.14463,
+            19.40722
         ],
         [
-            "0200L9-CENTROMEDICO",
-            "P0DT0H2M10S"
+            "CENTROMEDICO",
+            "P0DT0H2M10S",
+            -99.15603,
+            19.40656
         ],
         [
-            "0200L9-CHILPANCINGO",
-            "P0DT0H2M22S"
+            "CHILPANCINGO",
+            "P0DT0H2M22S",
+            -99.16852,
+            19.40593
         ],
         [
-            "0200L9-PATRIOTISMO",
-            "P0DT0H1M59S"
+            "PATRIOTISMO",
+            "P0DT0H1M59S",
+            -99.17892,
+            19.40611
         ],
         [
-            "0200L9-TACUBAYA",
-            "P0DT0H2M10S"
+            "TACUBAYA",
+            "P0DT0H2M10S",
+            -99.18776,
+            19.40146
         ]
     ],
     "CMX0200LA": [
         [
-            "0200LA-PANTITLAN",
-            "P0DT0H0M0S"
+            "PANTITLAN",
+            "P0DT0H0M0S",
+            -99.07192,
+            19.4153
         ],
         [
-            "0200LA-AGRICOLA",
-            "P0DT0H2M33S"
+            "AGRICOLA",
+            "P0DT0H2M33S",
+            -99.06957,
+            19.40462
         ],
         [
-            "0200LA-CANALSANJUAN",
-            "P0DT0H2M3S"
+            "CANALSANJUAN",
+            "P0DT0H2M3S",
+            -99.05942,
+            19.39876
         ],
         [
-            "0200LA-TEPALCATES",
-            "P0DT0H2M39S"
+            "TEPALCATES",
+            "P0DT0H2M39S",
+            -99.04633,
+            19.39128
         ],
         [
-            "0200LA-GUELATAO",
-            "P0DT0H2M9S"
+            "GUELATAO",
+            "P0DT0H2M9S",
+            -99.03566,
+            19.38515
         ],
         [
-            "0200LA-PENONVIEJO",
-            "P0DT0H3M53S"
+            "PENONVIEJO",
+            "P0DT0H3M53S",
+            -99.01705,
+            19.37331
         ],
         [
-            "0200LA-ACATITLA",
-            "P0DT0H2M31S"
+            "ACATITLA",
+            "P0DT0H2M31S",
+            -99.00567,
+            19.36472
         ],
         [
-            "0200LA-STAMARTA",
-            "P0DT0H2M3S"
+            "STAMARTA",
+            "P0DT0H2M3S",
+            -98.99518,
+            19.36031
         ],
         [
-            "0200LA-LOSREYES",
-            "P0DT0H3M11S"
+            "LOSREYES",
+            "P0DT0H3M11S",
+            -98.97687,
+            19.35904
         ],
         [
-            "0200LA-LAPAZ",
-            "P0DT0H3M28S"
+            "LAPAZ",
+            "P0DT0H3M28S",
+            -98.96094,
+            19.35056
         ]
     ],
     "CMX0200LB": [
         [
-            "0200LB-BUENAVISTA",
-            "P0DT0H0M0S"
+            "BUENAVISTA",
+            "P0DT0H0M0S",
+            -99.15235,
+            19.44619
         ],
         [
-            "0200LB-GUERRERO",
-            "P0DT0H1M15S"
+            "GUERRERO",
+            "P0DT0H1M15S",
+            -99.14614,
+            19.44514
         ],
         [
-            "0200LB-GARIBALDI",
-            "P0DT0H1M40S"
+            "GARIBALDI",
+            "P0DT0H1M40S",
+            -99.13787,
+            19.44389
         ],
         [
-            "0200LB-LAGUNILLA",
-            "P0DT0H1M31S"
+            "LAGUNILLA",
+            "P0DT0H1M31S",
+            -99.13023,
+            19.44322
         ],
         [
-            "0200LB-TEPITO",
-            "P0DT0H1M13S"
+            "TEPITO",
+            "P0DT0H1M13S",
+            -99.12407,
+            19.44279
         ],
         [
-            "0200LB-MORELOS",
-            "P0DT0H1M13S"
+            "MORELOS",
+            "P0DT0H1M13S",
+            -99.11957,
+            19.43917
         ],
         [
-            "0200LB-SANLAZARO",
-            "P0DT0H2M38S"
+            "SANLAZARO",
+            "P0DT0H2M38S",
+            -99.11296,
+            19.43237
         ],
         [
-            "0200LB-RFLORESMAGON",
-            "P0DT0H2M2S"
+            "RFLORESMAGON",
+            "P0DT0H2M2S",
+            -99.10371,
+            19.43657
         ],
         [
-            "0200LB-ROMERORUBIO",
-            "P0DT0H2M5S"
+            "ROMERORUBIO",
+            "P0DT0H2M5S",
+            -99.0942,
+            19.44084
         ],
         [
-            "0200LB-OCEANIA",
-            "P0DT0H1M43S"
+            "OCEANIA",
+            "P0DT0H1M43S",
+            -99.08722,
+            19.44569
         ],
         [
-            "0200LB-DPVOOCEANIA",
-            "P0DT0H1M56S"
+            "DPVOOCEANIA",
+            "P0DT0H1M56S",
+            -99.07933,
+            19.45101
         ],
         [
-            "0200LB-BOSQUEARAGON",
-            "P0DT0H2M29S"
+            "BOSQUEARAGON",
+            "P0DT0H2M29S",
+            -99.06929,
+            19.45809
         ],
         [
-            "0200LB-VILLAARAGON",
-            "P0DT0H1M46S"
+            "VILLAARAGON",
+            "P0DT0H1M46S",
+            -99.06138,
+            19.46167
         ],
         [
-            "0200LB-NEZAHUALCO",
-            "P0DT0H2M49S"
+            "NEZAHUALCO",
+            "P0DT0H2M49S",
+            -99.05461,
+            19.47289
         ],
         [
-            "0200LB-IMPULSORA",
-            "P0DT0H2M55S"
+            "IMPULSORA",
+            "P0DT0H2M55S",
+            -99.04896,
+            19.48575
         ],
         [
-            "0200LB-RIOREMEDIOS",
-            "P0DT0H1M7S"
+            "RIOREMEDIOS",
+            "P0DT0H1M7S",
+            -99.04679,
+            19.49069
         ],
         [
-            "0200LB-MUZQUIZ",
-            "P0DT0H2M27S"
+            "MUZQUIZ",
+            "P0DT0H2M27S",
+            -99.04207,
+            19.50149
         ],
         [
-            "0200LB-ECATEPEC",
-            "P0DT0H3M6S"
+            "ECATEPEC",
+            "P0DT0H3M6S",
+            -99.03607,
+            19.51513
         ],
         [
-            "0200LB-OLIMPICA",
-            "P0DT0H1M25S"
+            "OLIMPICA",
+            "P0DT0H1M25S",
+            -99.03334,
+            19.52135
         ],
         [
-            "0200LB-PLAZAARAGON",
-            "P0DT0H1M37S"
+            "PLAZAARAGON",
+            "P0DT0H1M37S",
+            -99.03018,
+            19.52848
         ],
         [
-            "0200LB-CIUDADAZTECA",
-            "P0DT0H1M22S"
+            "CIUDADAZTECA",
+            "P0DT0H1M22S",
+            -99.02751,
+            19.53451
         ]
     ],
     "CMX020L12": [
         [
-            "020L12-MIXCOAC",
-            "P0DT0H0M0S"
+            "MIXCOAC",
+            "P0DT0H0M0S",
+            -99.18673,
+            19.3757
         ],
         [
-            "020L12-INSURGENTESSUR",
-            "P0DT0H2M5S"
+            "INSURGENTESSUR",
+            "P0DT0H2M5S",
+            -99.17825,
+            19.37355
         ],
         [
-            "020L12-HOSPITAL20",
-            "P0DT0H1M48S"
+            "HOSPITAL20",
+            "P0DT0H1M48S",
+            -99.17088,
+            19.37201
         ],
         [
-            "020L12-ZAPATA",
-            "P0DT0H1M17S"
+            "ZAPATA",
+            "P0DT0H1M17S",
+            -99.1656,
+            19.37085
         ],
         [
-            "020L12-PARQUEVENADOS",
-            "P0DT0H1M40S"
+            "PARQUEVENADOS",
+            "P0DT0H1M40S",
+            -99.15872,
+            19.37066
         ],
         [
-            "020L12-EJECENTRAL",
-            "P0DT0H3M18S"
+            "EJECENTRAL",
+            "P0DT0H3M18S",
+            -99.15142,
+            19.36134
         ],
         [
-            "020L12-ERMITA",
-            "P0DT0H2M22S"
+            "ERMITA",
+            "P0DT0H2M22S",
+            -99.14163,
+            19.359820000000006
         ],
         [
-            "020L12-MEXICALTZINGO",
-            "P0DT0H4M26S"
+            "MEXICALTZINGO",
+            "P0DT0H4M26S",
+            -99.12314,
+            19.35776
         ],
         [
-            "020L12-ATLALILCO",
-            "P0DT0H4M47S"
+            "ATLALILCO",
+            "P0DT0H4M47S",
+            -99.10624,
+            19.35275
         ],
         [
-            "020L12-CULHUACAN",
-            "P0DT0H4M3S"
+            "CULHUACAN",
+            "P0DT0H4M3S",
+            -99.10896,
+            19.33685
         ],
         [
-            "020L12-SANANDRESTO",
-            "P0DT0H2M36S"
+            "SANANDRESTO",
+            "P0DT0H2M36S",
+            -99.10452,
+            19.32815
         ],
         [
-            "020L12-LOMASESTRELLA",
-            "P0DT0H2M45S"
+            "LOMASESTRELLA",
+            "P0DT0H2M45S",
+            -99.09575,
+            19.32215
         ],
         [
-            "020L12-CALLE11",
-            "P0DT0H2M23S"
+            "CALLE11",
+            "P0DT0H2M23S",
+            -99.08587,
+            19.32047
         ],
         [
-            "020L12-PERIFERICOOTE",
-            "P0DT0H2M51S"
+            "PERIFERICOOTE",
+            "P0DT0H2M51S",
+            -99.07451,
+            19.31761
         ],
         [
-            "020L12-TEZONCO",
-            "P0DT0H3M51S"
+            "TEZONCO",
+            "P0DT0H3M51S",
+            -99.06527,
+            19.30631
         ],
         [
-            "020L12-OLIVOS",
-            "P0DT0H1M27S"
+            "OLIVOS",
+            "P0DT0H1M27S",
+            -99.05951,
+            19.30432
         ],
         [
-            "020L12-NOPALERA",
-            "P0DT0H3M26S"
+            "NOPALERA",
+            "P0DT0H3M26S",
+            -99.04599,
+            19.29996
         ],
         [
-            "020L12-ZAPOTITLAN",
-            "P0DT0H3M13S"
+            "ZAPOTITLAN",
+            "P0DT0H3M13S",
+            -99.03431,
+            19.29666
         ],
         [
-            "020L12-TLALTENCO",
-            "P0DT0H2M53S"
+            "TLALTENCO",
+            "P0DT0H2M53S",
+            -99.02403,
+            19.29435
         ],
         [
-            "020L12-TLAHUAC",
-            "P0DT0H3M17S"
+            "TLAHUAC",
+            "P0DT0H3M17S",
+            -99.0142,
+            19.28602
         ]
     ]
 }
