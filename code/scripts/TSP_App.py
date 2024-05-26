@@ -219,10 +219,10 @@ class TSP_GUI:
         
     def __draw_graph(self):
         for node, (x, y) in self.__loc_stations.items():
-            node_oval = self.canvas.create_oval(x - self.nodes_size, 
-                                                y - self.nodes_size,
-                                                x + self.nodes_size,
-                                                y + self.nodes_size, fill="black", tags=f"node_{node}")
+            self.canvas.create_oval(x - self.nodes_size, 
+                                    y - self.nodes_size,
+                                    x + self.nodes_size,
+                                    y + self.nodes_size, fill="black", tags=f"node_{node}")
         for edge in self.graph.edges():
             x1, y1 = self.__loc_stations[edge[0]]
             x2, y2 = self.__loc_stations[edge[1]]
