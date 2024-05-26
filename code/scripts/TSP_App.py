@@ -172,7 +172,7 @@ class TSP_GUI:
     def __init__(self, root, graph):
         self.root = root
         self.root.title("TSP Solver with Simulated Annealing")
-        self.__height, self.__width = 800, 1200
+        self.__height, self.__width = 1000, 1000
         self.canvas = ctk.CTkCanvas(self.root, width=self.__width, height=self.__height, bg="white")
         self.canvas.place(x = 0, y = 0)
         
@@ -186,9 +186,9 @@ class TSP_GUI:
         self.output_text = ctk.CTkTextbox(self. root, width = 150, height = 100)
         self.output_text.configure(state = "disabled")
 
-        self.solve_button.place(x = 1235, y = 100)
-        self.clear_button.place(x = 1235, y = 150)
-        self.output_text.place(x = 1235, y = 300)
+        self.solve_button.place(x = 1035, y = 100)
+        self.clear_button.place(x = 1035, y = 150)
+        self.output_text.place(x = 1035, y = 300)
 
         self.nodes_size = 3
         self.select_nodes_size = 5
@@ -249,7 +249,7 @@ class TSP_GUI:
             messagebox.showwarning("Insufficient Nodes", "Please select at least two nodes to solve the TSP.")
             return
         
-        tsp_sa = TSP_SimulatedAnnealing(self.graph, self.selected_nodes, init_temp=1000.0, min_temp=1e-6, cool_rate=0.995, max_iters=5_000)
+        tsp_sa = TSP_SimulatedAnnealing(self.graph, self.selected_nodes, init_temp = 1000.0, min_temp = 1e-6, cool_rate = 0.995, max_iters = 5_000)
         best_path, best_cost = tsp_sa.find_solution()
         
         self.__draw_solution(best_path, best_cost)
@@ -288,7 +288,7 @@ if __name__ == "__main__":
     metro_graph = pickle.load(open("./output_metro/metro_graph.pickle", "rb"))
 
     root = ctk.CTk()
-    root.geometry("1400x800")
+    root.geometry("1200x1000")
     root.resizable(width = False, height = False)
 
     App = TSP_GUI(root = root, graph = metro_graph)
