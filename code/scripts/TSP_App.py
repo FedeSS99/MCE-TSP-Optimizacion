@@ -177,22 +177,26 @@ class TSP_GUI:
         self.canvas.place(x = 0, y = 0)
         
         self.graph = graph
-        self.__loc_stations = self.__get_stations_locations()
+        self.__loc_stations = self.__get_trans_stations_locations()
         self.selected_nodes = []
         
-        self.canvas.bind("<Button-1>", self.select_node)
-        self.solve_button = ctk.CTkButton(self.root, text="Solve TSP", command=self.solve_tsp)
-        self.clear_button = ctk.CTkButton(self.root, text="Clear graph", command=self.clear_graph)
+        self.canvas.bind("<Button-1>", self.__select_node)
+        self.solve_button = ctk.CTkButton(self.root, text="Solve TSP", command=self.__solve_tsp)
+        self.clear_button = ctk.CTkButton(self.root, text="Clear graph", command=self.__clear_graph)
+        self.output_text = ctk.CTkTextbox(self. root, width = 150, height = 100)
+        self.output_text.configure(state = "disabled")
+
         self.solve_button.place(x = 1235, y = 100)
         self.clear_button.place(x = 1235, y = 150)
+        self.output_text.place(x = 1235, y = 300)
 
         self.nodes_size = 3
         self.select_nodes_size = 5
         self.lines_width = 2
         
-        self.draw_graph()
+        self.__draw_graph()
 
-    def __get_stations_locations(self):
+    def __get_trans_stations_locations(self):
         json_file = "./output_metro/travel_times_metro.json"
         with open(json_file) as input_json:
             dict_times_metro = json.load(input_json)
@@ -213,7 +217,7 @@ class TSP_GUI:
 
         return location_stations
         
-    def draw_graph(self):
+    def __draw_graph(self):
         for node, (x, y) in self.__loc_stations.items():
             node_oval = self.canvas.create_oval(x - self.nodes_size, 
                                                 y - self.nodes_size,
@@ -226,7 +230,7 @@ class TSP_GUI:
                                     fill="blue",
                                     width = self.lines_width)
         
-    def select_node(self, event):
+    def __select_node(self, event):
         x, y = event.x, event.y
         for node, (node_x, node_y) in self.__loc_stations.items():
             if (node_x - 5 < x < node_x + 5) and (node_y - 5 < y < node_y + 5):
@@ -240,7 +244,7 @@ class TSP_GUI:
                                         tags=f"selected_node_{node}")
                 break
         
-    def solve_tsp(self):
+    def __solve_tsp(self):
         if len(self.selected_nodes) < 2:
             messagebox.showwarning("Insufficient Nodes", "Please select at least two nodes to solve the TSP.")
             return
@@ -248,9 +252,9 @@ class TSP_GUI:
         tsp_sa = TSP_SimulatedAnnealing(self.graph, self.selected_nodes, init_temp=1000.0, min_temp=1e-6, cool_rate=0.995, max_iters=5_000)
         best_path, best_cost = tsp_sa.find_solution()
         
-        self.draw_solution(best_path)
+        self.__draw_solution(best_path, best_cost)
         
-    def draw_solution(self, path):
+    def __draw_solution(self, path, cost):
         for i in range(len(path) - 1):
             x1, y1 = self.__loc_stations[path[i]]
             x2, y2 = self.__loc_stations[path[i+1]]
@@ -264,19 +268,28 @@ class TSP_GUI:
                                 fill="red",
                                 tags="solution",
                                 width = self.lines_width)
+        
+        self.output_text.configure(state = "normal")
+        self.output_text.insert("1.0", f"Best cost: {cost:.3f} hours")
+        self.output_text.configure(state = "disabled")
 
-    def clear_graph(self):
+    def __clear_graph(self):
         for node in self.selected_nodes:
             self.canvas.delete(f"selected_node_{node}")
         self.selected_nodes.clear()
         self.canvas.delete("solution")
+        
+        self.output_text.configure(state = "normal")
+        self.output_text.delete('1.0', 'end')
+        self.output_text.configure(state = "disabled")
 
-    
 
 if __name__ == "__main__":
     metro_graph = pickle.load(open("./output_metro/metro_graph.pickle", "rb"))
 
     root = ctk.CTk()
     root.geometry("1400x800")
+    root.resizable(width = False, height = False)
+
     App = TSP_GUI(root = root, graph = metro_graph)
-    root.mainloop()
+    App.root.mainloop()
