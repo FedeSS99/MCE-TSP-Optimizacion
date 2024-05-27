@@ -6,7 +6,7 @@ import json
 import customtkinter as ctk
 from tkinter import messagebox
 
-from math import exp
+from math import exp, cos, sin, pi
 from random import shuffle, sample
 
 
@@ -170,6 +170,15 @@ class TSP_SimulatedAnnealing:
 
 class TSP_GUI:
     def __init__(self, root, graph):
+        """
+        Initializes the TSP_GUI class with the given root window and graph.
+        Sets up the main window, canvas, buttons, and other widgets.
+        Draws the initial graph based on the provided graph data.
+        
+        Parameters:
+        root (Tk): The root window of the Tkinter application.
+        graph (networkx.Graph): The graph representing the TSP problem.
+        """
         self.root = root
         self.root.title("TSP Solver with Simulated Annealing")
         self.__height, self.__width = 1000, 1000
@@ -181,9 +190,9 @@ class TSP_GUI:
         self.__selected_nodes = []
         
         self.__canvas.bind("<Button-1>", self.__select_node)
-        self.__solve_button = ctk.CTkButton(self.root, text="Solve TSP", command=self.__solve_tsp)
+        self.__solve_button = ctk.CTkButton(self.root, text="Find optimal route", command=self.__solve_tsp)
         self.__clear_button = ctk.CTkButton(self.root, text="Clear graph", command=self.__clear_graph)
-        self.__output_text = ctk.CTkTextbox(self. root, width = 150, height = 100)
+        self.__output_text = ctk.CTkTextbox(self. root, width = 150, height = 50)
         self.__output_text.configure(state = "disabled")
 
         self.__solve_button.place(x = 1035, y = 100)
@@ -197,6 +206,13 @@ class TSP_GUI:
         self.__draw_graph()
 
     def __get_trans_stations_locations(self):
+        """
+        Reads the locations of transit stations from a JSON file, correct the coordinates,
+        and returns a dictionary of station locations.
+
+        Returns:
+        dict: A dictionary mapping station names to their corrected (x, y) coordinates.
+        """
         json_file = "./output_metro/travel_times_metro.json"
         with open(json_file) as input_json:
             dict_times_metro = json.load(input_json)
@@ -210,14 +226,27 @@ class TSP_GUI:
         lats, longs = [list(coords_tuple) for coords_tuple in zip(*list(location_stations.values()))]
         min_lat, max_lat = min(lats), max(lats)
         min_lon, max_lon = min(longs), max(longs)
-        norm_lats = [0.05 * self.__height + 0.85 * self.__height * (lat - min_lat)/(max_lat - min_lat) for lat in lats]
-        norm_longs = [0.05 * self.__width + 0.85 * self.__width * (lon - min_lon)/(max_lon - min_lon) for lon in longs]
+        x_canvas = [0.05 * self.__width + 0.85 * self.__width * (lon - min_lon)/(max_lon - min_lon) for lon in longs]
+        y_canvas = [0.05 * self.__height + 0.85 * self.__height * (lat - min_lat)/(max_lat - min_lat) for lat in lats]
+
+        cos_theta, sin_theta = cos(-pi/2.0), sin(-pi/2.0)
+        rotated_x_canvas, rotated_y_canvas = zip(*[(x*cos_theta - y*sin_theta, x*sin_theta + y*cos_theta) for x,y in zip(x_canvas, y_canvas)])
+
+        min_rot_x, max_rot_x = min(rotated_x_canvas), max(rotated_x_canvas)
+        min_rot_y, max_rot_y = min(rotated_y_canvas), max(rotated_y_canvas)
+        correct_x_canvas = [0.05 * self.__width + 0.85 * self.__width * (rot_x - min_rot_x)/(max_rot_x - min_rot_x) for rot_x in rotated_x_canvas]
+        correct_y_canvas = [0.05 * self.__height + 0.85 * self.__height * (rot_y - min_rot_y)/(max_rot_y - min_rot_y) for rot_y in rotated_y_canvas]
+
         for n, station in enumerate(location_stations.keys()):
-            location_stations[station] = (norm_longs[n], norm_lats[n])
+            location_stations[station] = (correct_x_canvas[n], correct_y_canvas[n])
 
         return location_stations
         
     def __draw_graph(self):
+        """
+        Draws the graph on the canvas by plotting the nodes and edges
+        based on the normalized locations of transit stations.
+        """
         for node, (x, y) in self.__loc_stations.items():
             self.__canvas.create_oval(x - self.__nodes_size, 
                                       y - self.__nodes_size,
@@ -231,6 +260,13 @@ class TSP_GUI:
                                     width = self.__lines_width)
         
     def __select_node(self, event):
+        """
+        Handles the event when a node is selected by clicking on the canvas.
+        Adds the selected node to the list of selected nodes and highlights it on the canvas.
+        
+        Parameters:
+        event (Event): The event object containing information about the mouse click.
+        """
         x, y = event.x, event.y
         for node, (node_x, node_y) in self.__loc_stations.items():
             if (node_x - 5 < x < node_x + 5) and (node_y - 5 < y < node_y + 5):
@@ -245,6 +281,11 @@ class TSP_GUI:
                 break
         
     def __solve_tsp(self):
+        """
+        Solves the Traveling Salesman Problem (TSP) using Simulated Annealing.
+        Displays a warning if fewer than two nodes are selected.
+        Draws the solution path on the canvas and displays the best cost.
+        """
         if len(self.__selected_nodes) < 2:
             messagebox.showwarning("Insufficient Nodes", "Please select at least two nodes to solve the TSP.")
             return
@@ -255,6 +296,13 @@ class TSP_GUI:
         self.__draw_solution(best_path, best_cost)
         
     def __draw_solution(self, path, cost):
+        """
+        Draws the solution path of the TSP on the canvas and displays the cost in the output textbox.
+        
+        Parameters:
+        path (list): The list of nodes representing the best path found.
+        cost (float): The cost of the best path.
+        """
         for i in range(len(path) - 1):
             x1, y1 = self.__loc_stations[path[i]]
             x2, y2 = self.__loc_stations[path[i+1]]
@@ -268,12 +316,19 @@ class TSP_GUI:
                                   fill="red",
                                   tags="solution",
                                   width = self.__lines_width)
-        
+
+        hours = int(cost)
+        minutes = int((cost - hours) * 60.0)
+
         self.__output_text.configure(state = "normal")
-        self.__output_text.insert("1.0", f"Best cost: {cost:.3f} hours")
+        self.__output_text.insert("1.0", f"Travel time:\n{hours} hours and {minutes} minutes")
         self.__output_text.configure(state = "disabled")
 
     def __clear_graph(self):
+        """
+        Clears the selected nodes and the solution path from the canvas.
+        Resets the output textbox.
+        """
         for node in self.__selected_nodes:
             self.__canvas.delete(f"selected_node_{node}")
         self.__selected_nodes.clear()
