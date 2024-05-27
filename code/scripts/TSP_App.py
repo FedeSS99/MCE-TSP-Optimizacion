@@ -173,26 +173,26 @@ class TSP_GUI:
         self.root = root
         self.root.title("TSP Solver with Simulated Annealing")
         self.__height, self.__width = 1000, 1000
-        self.canvas = ctk.CTkCanvas(self.root, width=self.__width, height=self.__height, bg="white")
-        self.canvas.place(x = 0, y = 0)
+        self.__canvas = ctk.CTkCanvas(self.root, width=self.__width, height=self.__height, bg="white")
+        self.__canvas.place(x = 0, y = 0)
         
-        self.graph = graph
+        self.__graph = graph
         self.__loc_stations = self.__get_trans_stations_locations()
-        self.selected_nodes = []
+        self.__selected_nodes = []
         
-        self.canvas.bind("<Button-1>", self.__select_node)
-        self.solve_button = ctk.CTkButton(self.root, text="Solve TSP", command=self.__solve_tsp)
-        self.clear_button = ctk.CTkButton(self.root, text="Clear graph", command=self.__clear_graph)
-        self.output_text = ctk.CTkTextbox(self. root, width = 150, height = 100)
-        self.output_text.configure(state = "disabled")
+        self.__canvas.bind("<Button-1>", self.__select_node)
+        self.__solve_button = ctk.CTkButton(self.root, text="Solve TSP", command=self.__solve_tsp)
+        self.__clear_button = ctk.CTkButton(self.root, text="Clear graph", command=self.__clear_graph)
+        self.__output_text = ctk.CTkTextbox(self. root, width = 150, height = 100)
+        self.__output_text.configure(state = "disabled")
 
-        self.solve_button.place(x = 1035, y = 100)
-        self.clear_button.place(x = 1035, y = 150)
-        self.output_text.place(x = 1035, y = 300)
+        self.__solve_button.place(x = 1035, y = 100)
+        self.__clear_button.place(x = 1035, y = 150)
+        self.__output_text.place(x = 1035, y = 300)
 
-        self.nodes_size = 3
-        self.select_nodes_size = 5
-        self.lines_width = 2
+        self.__nodes_size = 3
+        self.__select_nodes_size = 5
+        self.__lines_width = 2
         
         self.__draw_graph()
 
@@ -219,37 +219,37 @@ class TSP_GUI:
         
     def __draw_graph(self):
         for node, (x, y) in self.__loc_stations.items():
-            self.canvas.create_oval(x - self.nodes_size, 
-                                    y - self.nodes_size,
-                                    x + self.nodes_size,
-                                    y + self.nodes_size, fill="black", tags=f"node_{node}")
-        for edge in self.graph.edges():
+            self.__canvas.create_oval(x - self.__nodes_size, 
+                                      y - self.__nodes_size,
+                                      x + self.__nodes_size,
+                                      y + self.__nodes_size, fill="black", tags=f"node_{node}")
+        for edge in self.__graph.edges():
             x1, y1 = self.__loc_stations[edge[0]]
             x2, y2 = self.__loc_stations[edge[1]]
-            self.canvas.create_line(x1, y1, x2, y2,
+            self.__canvas.create_line(x1, y1, x2, y2,
                                     fill="blue",
-                                    width = self.lines_width)
+                                    width = self.__lines_width)
         
     def __select_node(self, event):
         x, y = event.x, event.y
         for node, (node_x, node_y) in self.__loc_stations.items():
             if (node_x - 5 < x < node_x + 5) and (node_y - 5 < y < node_y + 5):
-                self.selected_nodes.append(node)
-                self.canvas.create_oval(node_x - self.select_nodes_size,
-                                        node_y - self.select_nodes_size,
-                                        node_x + self.select_nodes_size,
-                                        node_y + self.select_nodes_size,
-                                        outline="red", 
-                                        width=2,
-                                        tags=f"selected_node_{node}")
+                self.__selected_nodes.append(node)
+                self.__canvas.create_oval(node_x - self.__select_nodes_size,
+                                          node_y - self.__select_nodes_size,
+                                          node_x + self.__select_nodes_size,
+                                          node_y + self.__select_nodes_size,
+                                          outline="red", 
+                                          width=2,
+                                          tags=f"selected_node_{node}")
                 break
         
     def __solve_tsp(self):
-        if len(self.selected_nodes) < 2:
+        if len(self.__selected_nodes) < 2:
             messagebox.showwarning("Insufficient Nodes", "Please select at least two nodes to solve the TSP.")
             return
         
-        tsp_sa = TSP_SimulatedAnnealing(self.graph, self.selected_nodes, init_temp = 1000.0, min_temp = 1e-6, cool_rate = 0.995, max_iters = 5_000)
+        tsp_sa = TSP_SimulatedAnnealing(self.__graph, self.__selected_nodes, init_temp = 1000.0, min_temp = 1e-6, cool_rate = 0.995, max_iters = 5_000)
         best_path, best_cost = tsp_sa.find_solution()
         
         self.__draw_solution(best_path, best_cost)
@@ -258,30 +258,30 @@ class TSP_GUI:
         for i in range(len(path) - 1):
             x1, y1 = self.__loc_stations[path[i]]
             x2, y2 = self.__loc_stations[path[i+1]]
-            self.canvas.create_line(x1, y1, x2, y2,
-                                    fill="red", 
-                                    tags="solution",
-                                    width = self.lines_width)
+            self.__canvas.create_line(x1, y1, x2, y2,
+                                      fill="red",
+                                      tags="solution",
+                                      width = self.__lines_width)
         x1, y1 = self.__loc_stations[path[-1]]
         x2, y2 = self.__loc_stations[path[0]]
-        self.canvas.create_line(x1, y1, x2, y2,
-                                fill="red",
-                                tags="solution",
-                                width = self.lines_width)
+        self.__canvas.create_line(x1, y1, x2, y2,
+                                  fill="red",
+                                  tags="solution",
+                                  width = self.__lines_width)
         
-        self.output_text.configure(state = "normal")
-        self.output_text.insert("1.0", f"Best cost: {cost:.3f} hours")
-        self.output_text.configure(state = "disabled")
+        self.__output_text.configure(state = "normal")
+        self.__output_text.insert("1.0", f"Best cost: {cost:.3f} hours")
+        self.__output_text.configure(state = "disabled")
 
     def __clear_graph(self):
-        for node in self.selected_nodes:
-            self.canvas.delete(f"selected_node_{node}")
-        self.selected_nodes.clear()
-        self.canvas.delete("solution")
+        for node in self.__selected_nodes:
+            self.__canvas.delete(f"selected_node_{node}")
+        self.__selected_nodes.clear()
+        self.__canvas.delete("solution")
         
-        self.output_text.configure(state = "normal")
-        self.output_text.delete('1.0', 'end')
-        self.output_text.configure(state = "disabled")
+        self.__output_text.configure(state = "normal")
+        self.__output_text.delete('1.0', 'end')
+        self.__output_text.configure(state = "disabled")
 
 
 if __name__ == "__main__":
