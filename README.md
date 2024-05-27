@@ -1,11 +1,10 @@
-# Aplicación del TSP al GTFS de Ciudad de México para la planificación eficiente de rutas
+# Aplicación del TSP para la optimización de rutas de metro en Ciudad de México usando Recocido Simulado y Búsqueda Tabú
 Por Semiramís G. de la Cruz y Federico Salinas Samaniego 
 
 # Introducción
 
-La Ciudad de México tiene una población de más de 22 millones de personas y un sistema de transporte público complejo que incluye metro, autobuses, metrobús y taxi. En este contexto, la eficiencia de las rutas de transporte es crucial para mejora de la movilidad urbana, y por ende, de la calidad de vida de las personas usuarias.
+La Ciudad de México enfrenta desafíos significativos en movilidad urbana debido a su denso y complejo sistema de transporte público. Según la Encuesta Origen-Destino de 2017 del INEGI, en la Zona Metropolitana del Valle de México, el transporte público es el medio más utilizado para ir al trabajo, con un 45\% de los viajes \cite{unam2018}. Sin embargo, las personas se enfrentan a una gran cantidad de opciones de rutas y conexiones, lo que complica la identificación de la mejor ruta. 
 
-La aplicación del Problema del Viajante (TSP) al General Transit Feed Specification (GTFS) de la Ciudad de México ofrece una oportunidad para encontrar la ruta más corta que pase por un conjunto de ubicaciones y volver al punto de partida.
 
 ## Alcance
 
@@ -126,3 +125,6 @@ Supongamos que un vendedor necesita visitar 4 ciudades: A, B, C y D. Las distanc
         - Actualizar la mejor ruta (**`mejor_ruta`**) con la ruta actual.
         - Actualizar la distancia mínima (**`min_dist`**) con la distancia recorrida.
         - Imprimir el número de iteración actual (**`n_iters`**) junto con la distancia mínima encontrada (**`min_dist`**).
+
+
+## Aplicación de Metaheurísticas
