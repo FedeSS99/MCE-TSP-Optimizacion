@@ -128,3 +128,80 @@ Supongamos que un vendedor necesita visitar 4 ciudades: A, B, C y D. Las distanc
 
 
 ## Aplicación de Metaheurísticas
+El proyecto aplica técnicas de Recocido Simulado y Búsqueda Tabú para la optimización de rutas del Sistema de Transporte Colectivo Metro en la Ciudad de México. Se presentan los resultados obtenidos utilizando diferentes configuraciones de parámetros para ambas heurísticas.
+
+### Recocido Simulado
+
+#### Parámetros Utilizados
+1. **Modelo 1:** α = 0.85, N = 500
+2. **Modelo 2:** α = 0.99, N = 3500
+
+#### Modelo 1: α = 0.85, N = 500
+| Solución | Costo (Horas) | Tiempo (Horas) |
+|----------|----------------|----------------|
+| 1        | 5.832222       | 0.013311       |
+| 2        | 6.245000       | 0.013149       |
+| 3        | 5.693056       | 0.013445       |
+| 4        | 5.693056       | 0.012782       |
+| 5        | 5.993056       | 0.013167       |
+
+*Cuadro 2. Resultados de 5 soluciones obtenidas mediante recocido simulado con parámetros α = 0.85 y N = 500.*
+
+#### Modelo 2: α = 0.99, N = 3500
+| Solución | Costo (Horas) | Tiempo (Horas) |
+|----------|----------------|----------------|
+| 1        | 5.693056       | 0.177517       |
+| 2        | 5.693056       | 0.174258       |
+| 3        | 5.693056       | 0.188916       |
+| 4        | 5.693056       | 0.196538       |
+| 5        | 5.693056       | 0.183417       |
+
+*Cuadro 3. Resultados de 5 soluciones obtenidas mediante recocido simulado con parámetros α = 0.99 y N = 3500.*
+
+#### Métricas Resumidas
+| Modelo | Costo Promedio (Horas) | Tiempo Promedio (Horas) |
+|--------|-------------------------|-------------------------|
+| 1      | 5.831277                | 0.013170                |
+| 2      | 5.693056                | 0.184129                |
+
+*Cuadro 4. Costo promedio y tiempo de cómputo promedio del par de sub modelos del recocido simulado.*
+
+### Búsqueda Tabú
+
+#### Parámetros Utilizados
+1. **Combinaciones probadas:**
+   - Tabu Size: {5, 10, 15}
+   - Max Iters: {5, 10, 15}
+
+#### Tabu Size = 5, Max Iters = 5
+| Solución | Costo (Horas) | Tiempo (Horas) |
+|----------|----------------|----------------|
+| 1        | 6.276389       | 0.017797       |
+| 2        | 6.047222       | 0.018772       |
+| 3        | 5.979722       | 0.018454       |
+| 4        | 6.113333       | 0.019072       |
+| 5        | 6.006944       | 0.019015       |
+
+*Cuadro 5. Resultados de 5 soluciones obtenidas mediante búsqueda tabú con Tabu Size = 5 y Max Iters = 5.*
+
+#### Tabu Size = 5, Max Iters = 15
+| Solución | Costo (Horas) | Tiempo (Horas) |
+|----------|----------------|----------------|
+| 1        | 5.693056       | 0.045797       |
+| 2        | 5.693056       | 0.046560       |
+| 3        | 5.693056       | 0.046212       |
+| 4        | 5.693056       | 0.048388       |
+| 5        | 5.693056       | 0.051388       |
+
+*Cuadro 6. Resultados de 5 soluciones obtenidas mediante búsqueda tabú con Tabu Size = 5 y Max Iters = 15.*
+
+### Métricas Resumidas
+| Modelo | Costo Promedio (Horas) | Tiempo Promedio (Horas) |
+|--------|-------------------------|-------------------------|
+| 1      | 6.084722                | 0.01825                 |
+| 2      | 5.693056                | 0.04766                 |
+
+*Cuadro 7. Costo promedio y tiempo de cómputo promedio del par de submodelos de búsqueda tabú.*
+
+## Conclusiones
+Los resultados obtenidos muestran que la configuración con α = 0.99 y N = 3500 para Recocido Simulado y Tabu Size = 5 y Max Iters = 15 para Búsqueda Tabú son las más eficientes en términos de costo y tiempo de cómputo.
